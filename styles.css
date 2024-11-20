@@ -1,0 +1,181 @@
+/* Reset default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styling - True Black Background */
+body {
+  font-family: 'Ubuntu Mono', monospace;
+  background-color: #000000;  /* True black background */
+  color: #e0e0e0; /* Light gray text for contrast */
+  line-height: 1.6;
+  overflow-x: hidden;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  height: 100vh; /* Full screen height */
+}
+
+/* Ensure the particles container doesn't block the background */
+#particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Behind the content */
+}
+
+/* Canvas for particle effect */
+canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* Center the content */
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 1; /* Above the particles */
+}
+
+/* Profile image styling */
+.image {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #00b894; /* Neon teal border */
+  box-shadow: 0 0 15px rgba(0, 184, 148, 0.6); /* Subtle glowing effect */
+  margin-bottom: 20px;
+  transition: 0.3s ease;
+}
+
+.image:hover {
+  transform: scale(1.05); /* Slight zoom effect */
+  box-shadow: 0 0 25px rgba(0, 184, 148, 1); /* Stronger glowing effect on hover */
+}
+
+/* Header Styling */
+.header1 {
+  font-family: 'Righteous', cursive;
+  font-size: 6vw;
+  color: #00b894; /* Neon teal color for techy look */
+  text-shadow: 0 0 10px rgba(0, 184, 148, 0.7), 0 0 20px rgba(0, 184, 148, 1); /* Glowing text */
+  margin-top: 20px;
+}
+
+.header2 {
+  font-family: 'Ubuntu Mono', monospace;
+  font-size: 1.6vw;
+  color: #b0b0b0; /* Light gray for secondary text */
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+.header3 {
+  font-family: 'Ubuntu Mono', monospace;
+  font-size: 2.2vw;
+  color: #ffffff; /* White text for strong contrast */
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* Social media links */
+.link1 {
+  font-family: 'Ubuntu Mono', monospace;
+  font-size: 2.8vw;
+  color: #00b894; /* Neon teal */
+  margin: 0px 10px;
+  transition: 0.3s ease;
+  display: inline-block;
+}
+
+.link1:hover {
+  color: #ff6f00; /* Cyber orange on hover */
+  text-shadow: 0 0 15px #ff6f00, 0 0 20px #ff6f00; /* Glowing effect on hover */
+  transform: scale(1.1); /* Slight scaling effect */
+}
+
+/* Glitch effect for text */
+.glitch {
+  position: relative;
+  display: inline-block;
+  color: #00ff00;
+  font-size: 6vw;
+}
+
+.glitch:after, .glitch:before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #ff0000; /* Red glitch text */
+  clip: rect(10px, 9999px, 44px, 0);
+  animation: glitch-anim 3s infinite linear alternate-reverse;
+}
+
+.glitch:before {
+  animation-delay: -1.5s;
+}
+
+.glitch:after {
+  animation-delay: -0.5s;
+}
+
+/* Glitch animation */
+@keyframes glitch-anim {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  20% {
+    transform: translate(-5px, 5px);
+  }
+  40% {
+    transform: translate(-3px, -4px);
+  }
+  60% {
+    transform: translate(5px, 0px);
+  }
+  80% {
+    transform: translate(0px, 5px);
+  }
+  100% {
+    transform: translate(3px, -3px);
+  }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 785px) {
+  .header1 {
+    font-size: 8vw;
+  }
+  .link1 {
+    font-size: 4vw;
+  }
+}
+
+@media screen and (max-width: 765px) {
+  body {
+    text-align: center;
+  }
+  .header1 {
+    font-size: 9vw;
+  }
+  .header2 {
+    font-size: 2.5vw;
+  }
+  .link1 {
+    font-size: 5vw;
+  }
+}
+
+@media screen and (min-width: 1390px) {
+  .header2 {
+    font-size: 1.1vw;
+  }
+}
